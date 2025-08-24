@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="KDCW 2025 공식 웹사이트. 프로그램, 연사, FAQ 등 모든 행사 정보를 확인하고 강연에 참여하세요." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kdcw.vercel.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kdcw.vercel.app/" />
+  <meta property="og:title" content="KDCW 2025: KRAFTON DEVELOPERS CONNECT WEEK" />
+  <meta property="og:description" content="다양한 관점이 만나는 만남과 연결, KDCW 2025에 여러분을 초대합니다." />
+  <meta property="og:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=KDCW+2025+Official" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://kdcw.vercel.app/" />
+  <meta property="twitter:title" content="KDCW 2025: KRAFTON DEVELOPERS CONNECT WEEK" />
+  <meta property="twitter:description" content="다양한 관점이 만나는 만남과 연결, KDCW 2025에 여러분을 초대합니다." />
+  <meta property="twitter:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=KDCW+2025+Official" />
+
+  <title>KDCW 2025</title>
+
+  <!-- JSON-LD for Event Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "KDCW 2025",
+    "startDate": "2025-09-04",
+    "endDate": "2025-09-05",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "코엑스 컨퍼런스룸",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "영동대로 513",
+        "addressLocality": "강남구",
+        "addressRegion": "서울특별시",
+        "addressCountry": "KR"
+      }
+    },
+    "image": "https://placehold.co/1200x630/000000/FFFFFF?text=KDCW+2025+Official",
+    "description": "KDCW 2025 공식 웹사이트. 프로그램, 연사, FAQ 등 모든 행사 정보를 확인하고 강연에 참여하세요.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "KRAFTON, Inc.",
+      "url": "https://www.krafton.com/"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts - Poppins, Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Self-host or trusted CDN for Pretendard */
+    @font-face {
+      font-family: 'Pretendard';
+      src: url('https://cdn.jsdelivr.net/gh/orion-ai/font-files@v1.0.0/Pretendard/Pretendard-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Pretendard';
+      src: url('https://cdn.jsdelivr.net/gh/orion-ai/font-files@v1.0.0/Pretendard/Pretendard-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <!-- ================================== tokens.css ================================== -->
+  <style id="tokens-css">
+    :root {
+      /* KDC Brand Colors */
+      --color-kdc-blue: #0064FF; /* Main action */
+      --color-kdc-green: #00F005; /* Accent */
+      --color-kdcw-gold: #C69C6D;
+      --color-kdcw-orange: #FF5A24;
+      
+      /* Neutral Palette (WCAG AA compliant) */
+      --color-neutral-black: #000000;
+      --color-neutral-dark-gray: #444841; /* body text */
+      --color-neutral-mid-gray: #888FA1;  /* subtext */
+      --color-neutral-light-gray: #D3DBE2;
+      --color-neutral-300: #E6EBF0;       /* sub tab bg */
+      --color-neutral-white: #FFFFFF;
+      --color-neutral-100: #F7F7F7;
+
+      /* Typography */
+      --font-family-title: 'Poppins', 'Pretendard', system-ui, sans-serif;
+      --font-family-body: 'Pretendard', system-ui, sans-serif;
+      --font-family-code: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --font-size-h1: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+      --font-size-h2: clamp(2rem, 3.5vw + 1rem, 3.5rem);
+      --font-size-base: clamp(1rem, 0.8vw + 0.8rem, 1.125rem);
+      --line-height: 1.6;
+      --tracking: 0.02em;
+
+      /* Spacing & Grid */
+      --space-unit: 0.5rem;
+      --space-1x: var(--space-unit);
+      --space-2x: calc(var(--space-unit) * 2);
+      --space-4x: calc(var(--space-unit) * 4);
+      --space-8x: calc(var(--space-unit) * 8);
+
+      --container-max-width: clamp(320px, 90vw, 1200px);
+
+      /* Border Radius */
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 1rem;
+
+      /* Motion */
+      --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --motion-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+      --motion-duration-fast: 160ms;
+      --motion-duration-default: 280ms;
+      --motion-duration-slow: 420ms;
+      --motion-translate-y: 20px; /* fade-up */
+      --motion-scale: 0.95;       /* modal */
+    }
+    /* ===== Dark Theme Overrides ===== */
+html[data-theme="dark"] {
+  /* 배경 계열 */
+  --color-neutral-white: #000000;   /* 페이지 기본 배경 */
+  --color-neutral-100:  #0B0B0B;    /* 카드/섹션 배경 */
+  --color-neutral-300:  #12161B;    /* 서브 탭 배경 */
+  --color-neutral-light-gray: #2A2F35; /* 경계선 */
+
+  /* 텍스트 계열 */
+  --color-neutral-dark-gray: #E8ECEF;  /* 본문 텍스트(밝은 회색) */
+  --color-neutral-mid-gray:  #B8C2CF;  /* 서브텍스트 */
+}
+
+/* 헤더(밝은 값 하드코딩되어 있어서 오버라이드 필요) */
+html[data-theme="dark"] .header {
+  background-color: rgba(0,0,0,0.9);
+  border-bottom-color: var(--color-neutral-light-gray);
+}
+html[data-theme="dark"] .header.is-scrolled {
+  background-color: rgba(0,0,0,0.96);
+  border-bottom-color: var(--color-neutral-light-gray);
+}
+html[data-theme="dark"] .header nav a {
+  color: var(--color-neutral-dark-gray);
+}
+html[data-theme="dark"] .header nav a:hover,
+html[data-theme="dark"] .header nav a:focus-visible {
+  color: var(--color-kdc-blue);
+  background: var(--color-neutral-300);
+}
+
+/* 카드 */
+html[data-theme="dark"] .card {
+  background-color: var(--color-neutral-100);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+/* 모달 */
+html[data-theme="dark"] .session-modal-content {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-dark-gray);
+}
+
+/* 서브탭 배경 */
+html[data-theme="dark"] .sub-tab-button {
+  background-color: var(--color-neutral-300);
+}
+
+  </style>
+
+  <!-- =================================== main.css =================================== -->
+  <style id="main-css">
+    * { box-sizing: border-box; }
+    html:focus-within { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-family-body);
+      font-size: var(--font-size-base);
+      line-height: var(--line-height);
+      background-color: var(--color-neutral-white);
+      color: var(--color-neutral-dark-gray);
+      margin: 0;
+      letter-spacing: var(--tracking);
+    }
+    img { max-width: 100%; height: auto; }
+    
+    .container { width: var(--container-max-width); margin: 0 auto; padding: 0 var(--space-4x); }
+    section { padding: var(--space-8x) 0; margin-bottom: var(--space-8x); }
+    
+    /* AppShell: Header */
+    .header { position: sticky; top: 0; z-index: 500; background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); padding: var(--space-2x); border-bottom: 1px solid var(--color-neutral-light-gray); }
+    .header nav ul { display: flex; justify-content: center; gap: var(--space-4x); list-style: none; margin: 0; padding: 0; }
+    .header nav a { text-decoration: none; color: var(--color-neutral-dark-gray); font-weight: 700; transition: color var(--motion-duration-fast); padding: var(--space-1x) var(--space-2x); border-radius: var(--radius-sm); }
+    .header nav a:hover, .header nav a:focus-visible { color: var(--color-kdc-blue); outline: none; background: var(--color-neutral-100); }
+    .header.is-scrolled { border-bottom-color: #cfd6dc; background-color: rgba(255,255,255,0.96); }
+    
+    /* Utility */
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-kdc-blue); color: var(--color-neutral-white); padding: var(--space-2x); z-index: 1000; transition: top var(--motion-duration-fast); }
+    .skip-link:focus { top: 0; }
+    
+    /* Hero */
+    .hero { height: 100svh; display: grid; place-items: center; position: relative; background-color: var(--color-neutral-black); color: var(--color-neutral-white); text-align: center; }
+    .hero-art-container { position: absolute; inset: 0; overflow: hidden; }
+    .hero-art { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); }
+    .hero-art-mask { clip-path: circle(0% at 50% 50%); transition: clip-path var(--motion-duration-slow) var(--motion-ease-in-out); }
+    .hero-art-mask.is-revealed { clip-path: circle(100% at 50% 50%); }
+    .hero-content { position: relative; z-index: 1; }
+    .split-text-span { display: inline-block; opacity: 0; transform: translateY(100%); transition: opacity 0.6s, transform 0.6s; }
+    
+    /* CTA Button */
+    .cta-btn { display: inline-block; padding: var(--space-2x) var(--space-4x); border-radius: var(--radius-md); font-weight: 700; text-decoration: none; transition: transform var(--motion-duration-fast), background-color var(--motion-duration-fast); }
+    .cta-btn.primary { background-color: var(--color-kdc-blue); color: var(--color-neutral-white); }
+    .cta-btn:hover, .cta-btn:focus-visible { transform: translateY(-2px); outline: none; }
+    
+    /* General */
+    h1, h2 { font-family: var(--font-family-title); font-weight: 700; }
+    h1 { font-size: var(--font-size-h1); margin: 0 0 var(--space-2x); }
+    h2 { font-size: var(--font-size-h2); margin: 0 0 var(--space-4x); }
+    .section-title { text-align: center; }
+
+    .card { background-color: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-4x); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); cursor: pointer; transition: transform var(--motion-duration-fast) var(--motion-ease-in-out); user-select: none; }
+    .card:hover, .card:focus-visible { transform: translateY(-5px); outline: none; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4x); }
+    
+    /* Program Tabs */
+    .tab-list { display: flex; justify-content: center; gap: var(--space-1x); margin-bottom: var(--space-4x); flex-wrap: wrap; }
+    .tab-button { padding: var(--space-2x) var(--space-4x); font-size: 1rem; font-weight: 700; border: 2px solid transparent; border-radius: var(--radius-lg); background-color: transparent; cursor: pointer; transition: background-color var(--motion-duration-fast); white-space: nowrap; }
+    .tab-button[aria-selected="true"] { background-color: var(--color-kdc-blue); color: var(--color-neutral-white); }
+    .tab-button:focus-visible { outline: 2px solid var(--color-kdc-blue); }
+
+    .sub-tab-list { display: flex; justify-content: center; gap: var(--space-1x); margin-bottom: var(--space-2x); flex-wrap: wrap; }
+    .sub-tab-button { padding: var(--space-1x) var(--space-2x); border-radius: var(--radius-md); background-color: var(--color-neutral-300); border: none; font-size: 1rem; cursor: pointer; }
+    .sub-tab-button[aria-selected="true"] { background-color: var(--color-kdc-blue); color: var(--color-neutral-white); }
+
+    /* Tab Content Transition */
+    .tab-panel-transition { position: relative; }
+    .tab-panel-transition .tab-panel { position: absolute; inset: 0 auto auto 0; width: 100%; opacity: 0; transform: translateX(100%); transition: opacity var(--motion-duration-default), transform var(--motion-duration-default) var(--motion-ease-in-out); }
+    .tab-panel-transition .tab-panel.is-active { position: relative; opacity: 1; transform: translateX(0); }
+    
+    /* Speaker Grid */
+    .speaker-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4x); }
+    .speaker-card { text-align: center; }
+    .speaker-card img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-lg); }
+    
+    /* FAQ Accordion */
+    .accordion-item { border-bottom: 1px solid var(--color-neutral-light-gray); }
+    .accordion-button { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: var(--space-2x) 0; background: none; border: none; font-size: 1rem; font-weight: 700; cursor: pointer; }
+    .accordion-button:focus-visible { outline: 2px solid var(--color-kdc-blue); border-radius: var(--radius-sm); }
+    .accordion-panel { max-height: 0; overflow: hidden; padding: 0 var(--space-4x); transition: max-height var(--motion-duration-slow) ease-in-out, padding var(--motion-duration-slow) ease-in-out; }
+    .accordion-panel.is-expanded { max-height: 500px; padding: var(--space-2x) var(--space-4x); }
+
+    /* Session Modal */
+    .session-modal-backdrop { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.85); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--motion-duration-default) var(--motion-ease-in-out), visibility 0s var(--motion-duration-default) linear; z-index: 1000; }
+    .session-modal-backdrop.is-visible { opacity: 1; visibility: visible; transition-delay: 0s; }
+    .session-modal-content { background-color: var(--color-neutral-white); color: var(--color-neutral-dark-gray); padding: var(--space-8x); border-radius: var(--radius-lg); max-width: 1200px; width: 92%; max-height: 90%; overflow-y: auto; transform: scale(var(--motion-scale)); transition: transform var(--motion-duration-default) var(--motion-ease-in-out); position: relative; }
+    .session-modal-backdrop.is-visible .session-modal-content { transform: scale(1); }
+    .session-modal-close { position: absolute; top: var(--space-4x); right: var(--space-4x); background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--color-neutral-dark-gray); }
+  
+  /* Hero 섹션 텍스트/버튼만 흰색으로 고정 */
+#hero .hero-content h1,
+#hero .hero-content p,
+#hero .cta-btn.primary {
+  color: #fff !important;
+}
+
+/* :hover, :focus 시에도 흰색 유지 */
+#hero .cta-btn.primary:hover,
+#hero .cta-btn.primary:focus-visible {
+  color: #fff !important;
+}
+/* 날짜/하위 탭 글자만 흰색 */
+html[data-theme="dark"] #program .tab-button,
+html[data-theme="dark"] #program .sub-tab-button {
+  color: #fff !important;
+}
+
+/* 선택된 탭도 흰색 유지(이미 흰색이지만 안전하게 고정) */
+html[data-theme="dark"] #program .tab-button[aria-selected="true"],
+html[data-theme="dark"] #program .sub-tab-button[aria-selected="true"] {
+  color: #fff !important;
+}
+
+/* 포커스 링은 기존 파란색 유지 (원하면 흰색으로 바꿔도 됨) */
+html[data-theme="dark"] #program .tab-button:focus-visible {
+  outline-color: var(--color-kdc-blue);
+}
+/* FAQ 질문(버튼) 글자색을 흰색으로 고정 */
+html[data-theme="dark"] #faq .accordion-header,
+html[data-theme="dark"] #faq .accordion-button {
+  color: #fff !important;
+}
+
+/* 플러스 아이콘(+ )도 흰색 */
+html[data-theme="dark"] #faq .accordion-icon {
+  color: #fff !important;
+}
+
+/* 포커스 링은 기존 파란색 유지 (원하면 바꿔도 됨) */
+html[data-theme="dark"] #faq .accordion-button:focus-visible {
+  outline-color: var(--color-kdc-blue);
+}
+/* 날짜 탭 옆 도구막대 + en 버튼 */
+.tab-toolbar {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+}
+.lang-toggle {
+  padding: 8px 14px; border: 0; border-radius: 999px; font-weight: 700;
+  background: var(--color-kdc-blue); color: #fff; cursor: pointer;
+}
+.lang-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+
+  </style>
+  
+  <!-- =================================== motion.css =================================== -->
+  <style id="motion-css">
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+    .fade-up { opacity: 0; transform: translateY(var(--motion-translate-y)); transition: opacity var(--motion-duration-slow) var(--motion-ease-in-out), transform var(--motion-duration-slow) var(--motion-ease-in-out); }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+    /* 서브탭 컨텐츠 자체도 살짝 페이드인 */
+.sub-panel { opacity: 0; transition: opacity var(--motion-duration-default) var(--motion-ease-in-out); }
+.sub-panel.is-active { opacity: 1; }
+
+/* 포스터 이미지 교차 페이드 전용 래퍼 */
+.poster-wrap { display: grid; }
+.poster-wrap > img { grid-area: 1 / 1; width: 100%; height: auto; }
+
+/* 새로 들어오는 이미지 */
+.poster-img { opacity: 0; transition: opacity var(--motion-duration-default) var(--motion-ease-in-out); }
+.poster-img.is-visible { opacity: 1; }
+
+/* 기존에 있던 이미지(겹쳐 놓고 서서히 사라지게) */
+.poster-img.exit { opacity: 1; }
+.poster-img.exit.fade-out { opacity: 0; }
+
+  </style>
+  
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+
+  <header class="header">
+    <nav aria-label="메인 내비게이션">
+      <ul>
+        <li><a href="#hero">홈</a></li>
+        <li><a href="#overview">오버뷰</a></li>
+        <li><a href="#program">프로그램</a></li>
+        <li><a href="#about">행사 소개</a></li>
+        <li><a href="#location">오시는 길</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" class="hero">
+      <div class="hero-art-container">
+        
+        <img
+  src="./KDCWEEK_logo_Color(White).png"
+  alt="KDCW 2025 행사 메인 비주얼"
+  loading="eager" decoding="sync"
+  class="hero-logo hero-art-mask"
+/>
+      
+      </div>
+      <div class="hero-content container fade-up">
+        <h1 class="split-text">KDCW 2025</h1>
+        
+        <p class="fade-up" style="transition-delay: 0.6s;">Connecting Minds, Building Futures.</p>
+        <a href="#program" class="cta-btn primary fade-up" style="transition-delay: 0.9s;">프로그램 보러가기</a>
+      </div>
+    </section>
+
+    
+    <section id="about" class="fade-up" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">행사 소개</h2>
+      <div class="container">
+        <p>
+          KDCW 2025는 단순한 강연을 넘어, 다양한 관점이 만나는 만남과 연결을 추구합니다.
+          우리의 업인 Creativity는 다양한 자극을 통해 발산과 수렴을 반복하며 더 큰 성장을
+          이루어낸다고 믿기 때문입니다. 소중한 교류의 장에 함께 해 주신 모든 분들 덕분에
+          지난 13년간 KDC는 꾸준히 지속될 수 있었습니다.
+        </p>
+      </div>
+    </section>
+    <section id="overview" class="fade-up" aria-labelledby="overview-title">
+      <h2 id="overview-title" class="section-title visually-hidden">전체 오버뷰</h2>
+      <div class="container">
+        <!-- 오버뷰 배경 이미지 적용 -->
+        <img src="./overview.jpg" alt="행사 전체 오버뷰 및 혜택" width="1080" height="2048" loading="lazy" decoding="async" />
+      </div>
+    </section>
+
+    <section id="program" class="fade-up" aria-labelledby="program-title">
+      <h2 id="program-title" class="section-title">프로그램</h2>
+      <div class="container">
+        <!-- Main Tab Navigation (Day Tabs) -->
+        <div role="tablist" aria-label="프로그램 날짜별 탭" class="tab-list" id="day-tablist"></div>
+        <!-- Tab Panels (Day Panels) -->
+        <div class="tab-panel-transition" id="day-panels"></div>
+      </div>
+    </section>
+    
+  
+
+    <section id="location" class="fade-up" aria-labelledby="location-title">
+      <h2 id="location-title" class="section-title">오시는 길</h2>
+      <div class="container">
+        <div class="card" tabindex="0">
+          <p>
+            행사 장소: 펍지성수 <br />
+            주소: 서울특별시 성동구 왕십리로4길 5
+          </p>
+          <!-- Naver Map Iframe Placeholder -->
+          <iframe 
+             title="펍지 성수 위치"
+  src="https://map.naver.com/v5/entry/place/1629869506?c=15,0,0,0,dh&placePath=%2Fhome%3Fentry=plt"
+  width="100%" 
+  height="450" 
+  style="border:0; border-radius:var(--radius-md);" 
+  allowfullscreen 
+  loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="fade-up" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section-title">자주 묻는 질문</h2>
+      <div class="container">
+        <div class="accordion-container" id="faq-accordion"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Full-screen Modal for Session Details / Posters -->
+  <div id="session-modal" class="session-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="session-modal-title">
+    <div class="session-modal-content">
+      <button class="session-modal-close" aria-label="모달 닫기" type="button">&times;</button>
+      <div id="session-modal-details"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 KDCW. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================================= IMAGE ASSETS MAPPING ================================= -->
+  <script>
+    // 업로드된 실제 파일명에 맞춰 URL-인코딩 적용
+    const posterAssets = {
+      overview: "./overview.jpg",
+      timetables: {
+        "2025-09-04": "./timetable1.png",
+        "2025-09-05": "./timetable2.png"
+      },
+      sessions: {
+        "2025-09-04": "./session1.jpg",
+        "2025-09-05": "./session2.jpg"
+      },
+      roundtable: {
+        "2025-09-04": "./roundtable1.jpg",
+        "2025-09-05": "./roundtable2.jpg"
+      },
+      workshop: {
+        "2025-09-04": "./workshop1.jpg",
+        "2025-09-05": "./workshop2.jpg"
+      }
+    };
+  </script>
+
+  <!-- ================================= JSON Data ================================= -->
+  <script id="data-json">
+    const programData = [
+      { "date":"2025-09-04","start":"09:00","end":"10:00","track":"Track 1","title":"행사 시작 및 오프닝","speakerIds":["s_01"],"location":"Main Stage","desc":"KDCW 2025의 시작을 알리는 오프닝 세션입니다.","tags":["세션","기념"],"id":"p_01","image":"https://placehold.co/800x450/212121/FFFFFF?text=Session_p01_Day1" },
+      { "date":"2025-09-04","start":"10:15","end":"11:00","track":"Track 2","title":"웹 접근성 심화 강의","speakerIds":["s_02"],"location":"Room 201","desc":"고급 웹 접근성 기술과 최신 동향을 살펴봅니다.","tags":["세션","웹","디자인"],"id":"p_02","image":"https://placehold.co/800x450/212121/FFFFFF?text=Session_p02_Day1" },
+      { "date":"2025-09-04","start":"11:15","end":"12:00","track":"Track 1","title":"라운드 테이블","speakerIds":[],"location":"Lounge","desc":"자유로운 주제로 네트워킹을 진행하는 라운드 테이블입니다.","tags":["라운드 테이블"],"id":"p_roundtable_d1","image":"https://placehold.co/800x450/212121/FFFFFF?text=Roundtable_D1" },
+      { "date":"2025-09-04","start":"13:00","end":"14:30","track":"Track 2","title":"워크숍","speakerIds":[],"location":"Room 202","desc":"직접 체험하고 배우는 실습 위주의 워크숍입니다.","tags":["워크숍"],"id":"p_workshop_d1","image":"https://placehold.co/800x450/212121/FFFFFF?text=Workshop_D1" },
+      { "date":"2025-09-05","start":"09:30","end":"10:15","track":"Track 1","title":"AI와 미래 디자인","speakerIds":["s_03"],"location":"Main Stage","desc":"인공지능이 디자인 프로세스에 미치는 영향을 논합니다.","tags":["세션","AI","디자인"],"id":"p_03","image":"https://placehold.co/800x450/212121/FFFFFF?text=Session_p03_Day2" },
+      { "date":"2025-09-05","start":"11:00","end":"12:00","track":"Track 2","title":"게임 서버 아키텍처","speakerIds":["s_04"],"location":"Room 201","desc":"대규모 멀티플레이어 게임을 위한 서버 설계 전략을 알아봅니다.","tags":["세션","게임","서버"],"id":"p_04","image":"https://placehold.co/800x450/212121/FFFFFF?text=Session_p04_Day2" },
+      { "date":"2025-09-05","start":"13:00","end":"14:30","track":"Track 1","title":"라운드 테이블","speakerIds":[],"location":"Lounge","desc":"자유로운 주제로 네트워킹을 진행하는 라운드 테이블입니다.","tags":["라운드 테이블"],"id":"p_roundtable_d2","image":"https://placehold.co/800x450/212121/FFFFFF?text=Roundtable_D2" },
+      { "date":"2025-09-05","start":"14:45","end":"16:15","track":"Track 2","title":"워크숍","speakerIds":[],"location":"Room 202","desc":"직접 체험하고 배우는 실습 위주의 워크숍입니다.","tags":["워크숍"],"id":"p_workshop_d2","image":"https://placehold.co/800x450/212121/FFFFFF?text=Workshop_D2" }
+    ];
+
+    const speakersData = [
+      { "id":"s_01","name":"운영사무국","role":"KDCW 2025","org":"크래프톤","bio":"KDCW 2025 행사를 기획하고 운영하는 팀입니다.","photo":"https://placehold.co/200x200/444841/FFFFFF?text=KDCW+Staff","links":[] },
+      { "id":"s_02","name":"김지민","role":"UX 컨설턴트","org":"ABC 스튜디오","bio":"사용자 경험과 접근성 분야의 전문가입니다.","photo":"https://placehold.co/200x200/C69C6D/FFFFFF?text=Speaker","links":[] },
+      { "id":"s_03","name":"박서준","role":"AI 아트 디렉터","org":"오로라 스튜디오","bio":"인공지능을 활용한 창작 활동을 연구하고 있습니다.","photo":"https://placehold.co/200x200/00F005/FFFFFF?text=Speaker","links":[] },
+      { "id":"s_04","name":"이하늘","role":"게임 서버 엔지니어","org":"넥서스 솔루션","bio":"안정적인 게임 서비스를 위한 서버 개발을 담당합니다.","photo":"https://placehold.co/200x200/0064FF/FFFFFF?text=Speaker","links":[] }
+    ];
+
+   const faqData = [
+  {
+    "q": "주차비는 지원되나요?",
+    "a": "아니요, 주차비는 지원되지 않습니다. 부득이한 경우 PUBG성수 건너편의 성동종합체육센터 주차장 혹은 노벨빌딩 유료 주차장을 이용해주세요. 현장 주차 공간이 협소하므로 대중교통 또는 셔틀버스 이용을 권장드립니다."
+  },
+  {
+    "q": "PUBG 성수로 이동 시 시내교통비 사용이 가능한가요?",
+    "a": "인정휴가를 사용하여 KDCW 2025에 참여하는 경우, 현행 규정상 [시내교통비] 사용이 불가합니다.<br><br>단, 아래 2가지 조건을 모두 만족하면 예외적으로 사용 가능합니다:<br>- 업무 목적의 참여/참관임을 조직장이 승인한 경우<br>- 인정휴가를 사용하지 않고 참여하는 경우<br><br>법인카드 정산 시 Concur 상세내용에 “KDCW 2025 참여: 업무 목적의 참여임을 상위 조직장에게 승인받았음”이라고 기재해주세요.<br><br>[펍지 성수 교통 안내]<br>- 역삼/판교/서초/합정 출발 셔틀버스(일 2회) 이용 권장<br>- PUBG성수는 분당선 서울숲역, 2호선 뚝섬역에서 도보 약 10분"
+  },
+  {
+    "q": "‘행사 참여 신청’과 ‘교류 프로그램 신청’을 동시에 할 수 있나요?",
+    "a": "네, 중복 신청 가능합니다. 같은 날짜의 교류 프로그램을 신청하고 참여 확정 시 해당 일자의 발표 세션 등 기타 행사에 자동 참여됩니다(예: 9/4 교류 프로그램 신청 → 9/4 발표 세션 등 참여 가능).<br>* 추가 참여사항은 교류 프로그램 신청 폼의 10번 문항을 참조해주세요.<br>다른 날짜의 프로그램에 참여하려면 각 날짜별로 각각 신청해주세요(예: 9/4 행사 참여 + 9/5 교류 프로그램 → 각각 신청)."
+  },
+  {
+    "q": "발표 세션 VOD는 언제 공개되나요?",
+    "a": "10월 중 공개될 예정입니다. 단, 라운드테이블과 워크숍 등 일부 프로그램은 녹화되지 않으며 VOD도 제공되지 않습니다."
+  },
+  {
+    "q": "점심 혹은 저녁이 제공되나요?",
+    "a": "네, 점심은 런치 박스, 저녁은 치킨·맥주 등의 식사가 제공될 예정입니다. 또한 중식은 외부 식당에서 법인카드로 1인당 1.5만원 한도로 사용 가능합니다."
+  },
+  {
+    "q": "양일 모두 참석하면 인정휴가도 2일이 부여되나요?",
+    "a": "아니요, 참석 일수와 관계없이 인정휴가는 1일만 부여됩니다."
+  },
+  {
+    "q": "인정휴가는 어떻게 신청하나요?",
+    "a": "허브 > 휴가 신청 > 연차 외 휴가 신청 > 인정휴가 > 기타로 선택 후, 비고란에 “KDCW 2025 참석”이라고 작성해주세요."
+  },
+  {
+    "q": "오후에만 참석이 가능한데 이 경우에도 인정휴가 사용이 되나요?",
+    "a": "네, 가능합니다. 허브에서 휴가 신청 시 연차 외 휴가 > 인정휴가 > 기타 > 0.5일(오전/오후)로 신청하고, 비고란에 “KDCW 2025 참여”를 기입해주세요."
+  },
+  {
+    "q": "KDCW 2025 참여 시 조직장과 사전 논의가 필요한가요?",
+    "a": "네, 인정휴가 사용 시에는 반드시 조직장과 사전 협의가 필요합니다. 전사 공지 예정 사항: ① 인정휴가 사용 전 조직장과 협의할 것 ② 휴가 상신 시 비고란에 ‘KDCW 참여’ 명시할 것."
+  },
+  {
+    "q": "KDCW에 대해 궁금한 부분이 많습니다. 어디로 연락드리면 될까요?",
+    "a": "슬랙 채널 #ask-kdc 에 문의해주시면 최대한 빠르게 답변드리겠습니다."
+  }
+];
+
+  </script>
+
+  <!-- =================================== program.js =================================== -->
+  <script id="program-js">
+    document.addEventListener('DOMContentLoaded', () => {
+      const program = programData;
+      const speakers = speakersData;
+      const faq = faqData;
+
+      const programTabsContainer = document.querySelector('.tab-list');
+      const programPanelsContainer = document.querySelector('.tab-panel-transition');
+      const faqContainer = document.getElementById('faq-accordion');
+      const speakersContainer = document.getElementById('speaker-grid');
+      const heroArt = document.querySelector('.hero-art-mask');
+      const heroSplitText = document.querySelector('.split-text');
+      const fadeUpElements = document.querySelectorAll('.fade-up');
+      const sessionModal = document.getElementById('session-modal');
+      const sessionModalCloseBtn = sessionModal.querySelector('.session-modal-close');
+      const sessionModalDetails = document.getElementById('session-modal-details');
+
+      // ===== a11y: focus trap for modal =====
+      let lastFocusedElement = null;
+      const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+      function trapFocus(container){
+        const focusables = Array.from(container.querySelectorAll(focusableSelector));
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last  = focusables[focusables.length - 1];
+        function handle(e){
+          if (e.key !== 'Tab') return;
+          if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+        container.addEventListener('keydown', handle);
+        container._trapRemover = () => container.removeEventListener('keydown', handle);
+      }
+
+      // Split text animation
+      const splitText = (target) => {
+        target.innerHTML = target.textContent.split('').map((char) => `<span class="split-text-span">${char}</span>`).join('');
+      };
+      splitText(heroSplitText);
+      const textSpans = document.querySelectorAll('.split-text-span');
+      textSpans.forEach((span, index) => {
+        span.style.transitionDelay = `${index * 40}ms`;
+        span.style.opacity = '1';
+        span.style.transform = 'translateY(0)';
+      });
+
+      // Scroll reveal
+      const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+      const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+      const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+      fadeUpElements.forEach(el => scrollObserver.observe(el));
+      setTimeout(() => { heroArt.classList.add('is-revealed'); }, 500);
+
+      // Group sessions by date
+      const programByDate = program.reduce((acc, session) => {
+        (acc[session.date] ||= []).push(session);
+        return acc;
+      }, {});
+
+      // Render program tabs & panels
+      const renderProgram = () => {
+        const dates = Object.keys(programByDate).sort();
+        let first = true;
+        for (const date of dates) {
+          const mainTabId = `tab-${date}`;
+          const mainPanelId = `panel-${date}`;
+          const dateString = new Date(date).toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+
+          const mainTabButton = document.createElement('button');
+          mainTabButton.type = 'button';
+          mainTabButton.setAttribute('role', 'tab');
+          mainTabButton.setAttribute('aria-selected', String(first));
+          mainTabButton.setAttribute('aria-controls', mainPanelId);
+          mainTabButton.setAttribute('id', mainTabId);
+          mainTabButton.classList.add('tab-button');
+          mainTabButton.textContent = dateString;
+          programTabsContainer.appendChild(mainTabButton);
+
+          const mainPanel = document.createElement('div');
+          mainPanel.setAttribute('role', 'tabpanel');
+          mainPanel.setAttribute('id', mainPanelId);
+          mainPanel.setAttribute('aria-labelledby', mainTabId);
+          mainPanel.classList.add('tab-panel');
+          if (!first) { mainPanel.setAttribute('hidden', ''); } else { mainPanel.classList.add('is-active'); }
+
+          // Sub-tabs
+          const subTabList = document.createElement('div');
+          subTabList.setAttribute('role', 'tablist');
+          subTabList.setAttribute('aria-label', `${dateString} 서브 탭`);
+          subTabList.classList.add('sub-tab-list');
+          mainPanel.appendChild(subTabList);
+
+          const subPanelContainer = document.createElement('div');
+          subPanelContainer.classList.add('sub-panel-container');
+          mainPanel.appendChild(subPanelContainer);
+
+          const subTabs = ['timetable', 'sessions', 'roundtable','workshop'];
+          subTabs.forEach((tabName, index) => {
+            const subTabId = `${mainPanelId}-${tabName}`;
+            const subPanelId = `${mainPanelId}-content-${tabName}`;
+            const isFirstSubTab = index === 0;
+
+            const subTabButton = document.createElement('button');
+            subTabButton.type = 'button';
+            subTabButton.setAttribute('role', 'tab');
+            subTabButton.setAttribute('aria-selected', String(isFirstSubTab));
+            subTabButton.setAttribute('aria-controls', subPanelId);
+            subTabButton.setAttribute('id', subTabId);
+            subTabButton.classList.add('sub-tab-button');
+            subTabButton.textContent = tabName;
+            subTabList.appendChild(subTabButton);
+
+            const subPanel = document.createElement('div');
+            subPanel.setAttribute('id', subPanelId);
+            subPanel.setAttribute('role', 'tabpanel');
+            subPanel.setAttribute('aria-labelledby', subTabId);
+            subPanel.classList.add('sub-panel');
+            if (isFirstSubTab) { subPanel.classList.add('is-active'); } else { subPanel.setAttribute('hidden', ''); }
+
+            if (tabName === 'timetable') {
+              subPanel.innerHTML = `
+                <div class="timetable-wrap" style="position:relative;">
+                  <img src="${posterAssets.timetables[date] || posterAssets.timetables['2025-09-04']}" alt="${dateString} 전체 타임테이블" loading="lazy" decoding="async" />
+                  
+                </div>`;
+            } else if (tabName === 'sessions') {
+               subPanel.innerHTML = `
+                <div class="timetable-wrap" style="position:relative;">
+                  <img src="${posterAssets.sessions[date] || posterAssets.sessions['2025-09-04']}" alt="${dateString} 전체 타임테이블" loading="lazy" decoding="async" />
+                </div>`;
+            }
+            else if (tabName === 'roundtable') {
+               subPanel.innerHTML = `
+                <div class="timetable-wrap" style="position:relative;">
+                  <img src="${posterAssets.roundtable[date] || posterAssets.roundtable['2025-09-04']}" alt="${dateString} 전체 타임테이블" loading="lazy" decoding="async" />
+                </div>`;
+            }
+            else if (tabName === 'workshop') {
+               subPanel.innerHTML = `
+                <div class="timetable-wrap" style="position:relative;">
+                  <img src="${posterAssets.workshop[date] || posterAssets.workshop['2025-09-04']}" alt="${dateString} 전체 타임테이블" loading="lazy" decoding="async" />
+                </div>`;
+            }
+            subPanelContainer.appendChild(subPanel);
+          });
+
+          programPanelsContainer.appendChild(mainPanel);
+          first = false;
+        }
+      };
+
+      const renderSpeakers = () => {
+        speakers.forEach(speaker => {
+          const card = document.createElement('div');
+          card.classList.add('speaker-card');
+          card.innerHTML = `
+            <img src="${speaker.photo}" alt="${speaker.name} 연사 사진" loading="lazy" decoding="async" />
+            <h3>${speaker.name}</h3>
+            <p>${speaker.role} @${speaker.org}</p>`;
+          speakersContainer.appendChild(card);
+        });
+      };
+
+      const renderFAQ = () => {
+        faq.forEach((item, index) => {
+          const itemDiv = document.createElement('div');
+          itemDiv.classList.add('accordion-item');
+          const btnId = `accordion-button-${index}`;
+          const panelId = `accordion-panel-${index}`;
+          itemDiv.innerHTML = `
+            <h3 class="accordion-header">
+              <button id="${btnId}" class="accordion-button" type="button" aria-expanded="false" aria-controls="${panelId}">
+                <span>${item.q}</span>
+                <span class="accordion-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="${panelId}" class="accordion-panel" role="region" aria-labelledby="${btnId}">
+              <p>${item.a}</p>
+            </div>`;
+          faqContainer.appendChild(itemDiv);
+        });
+      };
+
+      renderProgram();
+      renderFAQ();
+      // ===== 날짜 탭 옆에 en 버튼 추가 =====
+const tabListEl = document.getElementById('day-tablist');
+const toolbar = document.createElement('div');
+toolbar.className = 'tab-toolbar';
+tabListEl.parentNode.insertBefore(toolbar, tabListEl);
+toolbar.appendChild(tabListEl);
+
+const langBtn = document.createElement('button');
+langBtn.type = 'button';
+langBtn.className = 'lang-toggle';
+langBtn.id = 'lang-toggle';
+langBtn.textContent = 'EN';
+toolbar.appendChild(langBtn);
+
+
+const langState = { value: 'ko' };    // 'ko' | 'en'
+
+// 확장자 앞에 _en 붙이기 (예: foo.png → foo_en.png)
+function withLangPath(path) {
+  if (langState.value !== 'en') return path;
+  return path.replace(/(\.[a-z0-9]+)$/i, '_en$1');
+}
+
+// 현재 활성 서브패널만 다시 그림
+function refreshActivePanels() {
+  const activePanels = document.querySelectorAll('.tab-panel.is-active .sub-panel.is-active');
+  activePanels.forEach(sp => {
+    const m = sp.id.match(/^panel-(\d{4}-\d{2}-\d{2})-content-([a-z]+)/);
+    if (!m) return;
+    const [, date, tabName] = m;
+    renderSubPanel(tabName, date); // 아래에서 withLangPath 사용하도록 수정함
+  });
+}
+
+// 버튼 클릭 시 토글
+langBtn.addEventListener('click', () => {
+  langState.value = (langState.value === 'ko') ? 'en' : 'ko';
+  langBtn.textContent = (langState.value === 'en') ? '한국어' : 'English';
+  refreshActivePanels();
+});
+
+/*
+function getPosterSrc(type, date) {
+  if (type === "timetable") return posterAssets.timetable[date];
+  if (type === "sessions")   return posterAssets.sessions[date];
+
+  if (type === "roundtable")   return posterAssets.roundtable[date];
+
+  if (type === "workshop")   return posterAssets.workshop[date];
+  return posterAssets[type]; // roundtable, workshop 등
+}
+*/
+// 언어 붙이기 전 "기본 경로"만 반환
+function getPosterBase(type, date) {
+  if (type === 'timetable') return posterAssets.timetables[date];
+  if (type === 'sessions')  return posterAssets.sessions[date];
+  if (type === 'roundtable')return posterAssets.roundtable[date];
+  if (type === 'workshop')  return posterAssets.workshop[date];
+  return posterAssets[type];
+}
+
+
+
+
+
+// 선택된 탭 + 날짜의 콘텐츠 그리기 (_en 적용 + onerror 폴백)
+function renderSubPanel(tabName, date) {
+  const panelId = `panel-${date}-content-${tabName}`;
+  const subPanel = document.getElementById(panelId);
+  if (!subPanel) return;
+
+  const base = getPosterBase(tabName, date)
+    || (tabName === 'timetable' ? posterAssets.timetables['2025-09-04'] : null);
+
+  if (!base) { subPanel.innerHTML = '<p>이미지가 없습니다.</p>'; return; }
+
+  const src = withLangPath(base);
+  const dateString = new Date(date).toLocaleDateString('ko-KR',{month:'long',day:'numeric'});
+
+  subPanel.innerHTML = `
+    <div class="${tabName}-wrap" style="position:relative;">
+      <img src="${src}" alt="${dateString} ${tabName}" 
+           loading="lazy" decoding="async"
+           onerror="this.onerror=null; this.src='${base}'" />
+    </div>`;
+}
+/*
+function renderSubPanel(tabName, date) {
+  const panelId = `panel-${date}-content-${tabName}`;
+  const subPanel = document.getElementById(panelId);
+  if (!subPanel) return;
+
+  if (tabName === "timetable") {
+    const src = getPosterSrc("timetable", date) || posterAssets.timetable["2025-09-04"];
+    const dateString = new Date(date).toLocaleDateString("ko-KR",{month:"long",day:"numeric"});
+    subPanel.innerHTML = `
+      <div class="timetable-wrap" style="position:relative;">
+        <img src="${src}" alt="${dateString} 전체 타임테이블" />
+       
+      </div>`;
+  } else if (tabName === "session") {
+    // 이 부분은 기존 renderProgram 안에서 했던 그대로 남겨둬도 됨
+    // (sessions list append)
+     const src = getPosterSrc("sessions", date) || posterAssets.sessions["2025-09-04"];
+    const dateString = new Date(date).toLocaleDateString("ko-KR",{month:"long",day:"numeric"});
+    subPanel.innerHTML = `
+      <div class="sessions-wrap" style="position:relative;">
+        <img src="${src}" alt="${dateString} 전체 세션" />
+       
+      </div>`;
+  }
+  else if (tabName === "roundtable") {
+    // 이 부분은 기존 renderProgram 안에서 했던 그대로 남겨둬도 됨
+    // (sessions list append)
+     const src = getPosterSrc("roundtable", date) || posterAssets.roundtable["2025-09-04"];
+    const dateString = new Date(date).toLocaleDateString("ko-KR",{month:"long",day:"numeric"});
+    subPanel.innerHTML = `
+      <div class="roundtable-wrap" style="position:relative;">
+        <img src="${src}" alt="${dateString} 전체 세션" />
+       
+      </div>`;
+  }
+  else if (tabName === "workshop") {
+    // 이 부분은 기존 renderProgram 안에서 했던 그대로 남겨둬도 됨
+    // (workshop list append)
+     const src = getPosterSrc("workshop", date) || posterAssets.workshop["2025-09-04"];
+    const dateString = new Date(date).toLocaleDateString("ko-KR",{month:"long",day:"numeric"});
+    subPanel.innerHTML = `
+      <div class="workshop-wrap" style="position:relative;">
+        <img src="${src}" alt="${dateString} 전체 세션" />
+       
+      </div>`;
+  }
+}
+
+*/
+      // Main tab click + keyboard navigation
+      programTabsContainer.addEventListener('click', (e) => {
+        const target = e.target.closest('button[role="tab"]');
+        if (!target) return;
+        activateMainTab(target);
+      });
+      programTabsContainer.addEventListener('keydown', (e) => {
+        const tabs = [...programTabsContainer.querySelectorAll('button[role="tab"]')];
+        const currentIndex = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+        if (['ArrowRight','ArrowLeft','Home','End'].includes(e.key)) e.preventDefault();
+        if (e.key === 'ArrowRight') { const next = tabs[(currentIndex + 1) % tabs.length]; next.focus(); activateMainTab(next); }
+        if (e.key === 'ArrowLeft')  { const prev = tabs[(currentIndex - 1 + tabs.length) % tabs.length]; prev.focus(); activateMainTab(prev); }
+        if (e.key === 'Home') { tabs[0].focus(); activateMainTab(tabs[0]); }
+        if (e.key === 'End')  { tabs[tabs.length - 1].focus(); activateMainTab(tabs[tabs.length - 1]); }
+      });
+
+      function activateMainTab(target){
+        const allMainPanels = document.querySelectorAll('.tab-panel');
+        allMainPanels.forEach(p => { p.setAttribute('hidden', ''); p.classList.remove('is-active'); });
+        const allMainTabs = document.querySelectorAll('.tab-button');
+        allMainTabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+        const panelId = target.getAttribute('aria-controls');
+        const selectedPanel = document.getElementById(panelId);
+        selectedPanel.removeAttribute('hidden');
+        selectedPanel.classList.add('is-active');
+        target.setAttribute('aria-selected', 'true');
+        history.replaceState(null, '', `#${panelId}`);
+      }
+
+      // Sub-tab delegation
+      document.querySelectorAll('.sub-tab-list').forEach(list => {
+        list.addEventListener('click', (e) => {
+          const target = e.target.closest('button[role="tab"]');
+          if (!target) return;
+          const parentPanel = target.closest('.tab-panel');
+          
+          const allSubPanels = parentPanel.querySelectorAll('.sub-panel');
+          allSubPanels.forEach(p => { p.setAttribute('hidden', ''); p.classList.remove('is-active'); });
+          const allSubTabs = parentPanel.querySelectorAll('.sub-tab-button');
+          allSubTabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+          const subPanelId = target.getAttribute('aria-controls');
+          const selectedSubPanel = document.getElementById(subPanelId);
+          selectedSubPanel.removeAttribute('hidden');
+          selectedSubPanel.classList.add('is-active');
+          target.setAttribute('aria-selected', 'true');
+
+    // 2) 새로 추가: 탭 이름 + 날짜 기반으로 실제 컨텐츠 갱신
+           const tabName = target.textContent.trim(); // "타임테이블" or "세션소개"
+    const dateMatch = subPanelId.match(/panel-(\d{4}-\d{2}-\d{2})/);
+    if (dateMatch) {
+      const date = dateMatch[1]; // 예: "2025-09-04"
+      renderSubPanel(tabName, date);
+      
+    }
+        });
+      });
+
+      // FAQ accordion
+      faqContainer.addEventListener('click', (e) => {
+        const target = e.target.closest('button.accordion-button');
+        if (!target) return;
+        const isExpanded = target.getAttribute('aria-expanded') === 'true';
+        target.setAttribute('aria-expanded', String(!isExpanded));
+        const panel = document.getElementById(target.getAttribute('aria-controls'));
+        panel.classList.toggle('is-expanded', !isExpanded);
+      });
+
+      // Session modal open/close
+      // const clickTargets = () => document.querySelectorAll('[data-session-id]');
+      const openSession = (sessionId) => {
+        const session = program.find(s => s.id === sessionId);
+        if (!session) return;
+        const speaker = session.speakerIds?.length ? speakers.find(s => s.id === session.speakerIds[0]) : null;
+        sessionModalDetails.innerHTML = `
+          <img src="${session.image}" alt="${session.title}" style="width:100%; height:auto; border-radius:var(--radius-md); margin-bottom:var(--space-4x);" loading="lazy" decoding="async" />
+          <h2 id="session-modal-title">${session.title}</h2>
+          <p><strong>날짜:</strong> ${new Date(session.date).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p><strong>시간:</strong> ${session.start} - ${session.end}</p>
+          <p><strong>트랙:</strong> ${session.track}</p>
+         
+          <p><strong>장소:</strong> ${session.location}</p>
+          <p><strong>설명:</strong> ${session.desc}</p>`;
+        sessionModal.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+        lastFocusedElement = document.activeElement;
+        const content = sessionModal.querySelector('.session-modal-content');
+        content.setAttribute('tabindex','-1');
+        content.focus();
+        trapFocus(content);
+      };
+
+      /*
+      const bindSessionCards = () => {
+        // 세션 카드(세션 상세)
+        clickTargets().forEach(card => {
+          card.addEventListener('click', (e) => openSession(e.currentTarget.dataset.sessionId));
+          card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSession(e.currentTarget.dataset.sessionId); } });
+        });
+        // 타임테이블 포스터 버튼
+        document.querySelectorAll('[data-open-poster]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const type = btn.getAttribute('data-open-poster');
+            const date = btn.getAttribute('data-date');
+            openPoster(type, date);
+          });
+        });
+      };
+      // 최초 바인딩 호출 (세션 카드가 렌더링 후에도 이벤트 유지)
+      bindSessionCards();
+*/
+      sessionModalCloseBtn.addEventListener('click', () => closeModal());
+      sessionModal.addEventListener('click', (e) => { if (e.target === sessionModal) closeModal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && sessionModal.classList.contains('is-visible')) closeModal(); });
+      function closeModal(){
+        sessionModal.classList.remove('is-visible');
+        document.body.style.overflow = '';
+        const content = sessionModal.querySelector('.session-modal-content');
+        if (content && content._trapRemover) content._trapRemover();
+        content?.removeAttribute('tabindex');
+        lastFocusedElement?.focus();
+      }
+
+      // Open static poster in modal (sessions/roundtable/workshop)
+      function openPoster(type, date){
+        let src = '';
+        let title = '';
+
+        if (type === 'session') { src = posterAssets.session[date]; title = `세션 소개 (${new Date(date).toLocaleDateString('ko-KR', { month:'long', day:'numeric'})})`; }
+        if (type === 'roundtable') { src = posterAssets.roundtable; title = '라운드테이블 소개'; }
+        if (type === 'workshop') { src = posterAssets.workshop; title = '워크숍 소개'; }
+        if (!src) return;
+        sessionModalDetails.innerHTML = `
+          <h2 id="session-modal-title">${title}</h2>
+          <img src="${src}" alt="${title} 이미지" style="width:100%; height:auto; border-radius:var(--radius-md); margin-top:var(--space-4x);" loading="lazy" decoding="async" />`;
+        sessionModal.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+        lastFocusedElement = document.activeElement;
+        const content = sessionModal.querySelector('.session-modal-content');
+        content.setAttribute('tabindex','-1');
+        content.focus();
+        trapFocus(content);
+      }
+//추가 
+// ===================================================
+// 이벤트 위임: 프로그램 패널 컨테이너 한 곳에만 리스너 등록
+// ===================================================
+
+// 1) 클릭 처리(마우스/터치)
+// - 새로 그려진 버튼/카드도 자동으로 동작
+programPanelsContainer.addEventListener('click', (e) => {
+  // (A) 타임테이블 위 파란 버튼들: [data-open-poster]
+  const posterBtn = e.target.closest('[data-open-poster]');
+  if (posterBtn) {
+    openPoster(posterBtn.dataset.openPoster, posterBtn.dataset.date);
+    return; // 아래 카드 처리와 중복 방지
+  }
+
+  // (B) 세션 카드(상세 모달): [data-session-id]
+  const sessionCard = e.target.closest('[data-session-id]');
+  if (sessionCard) {
+    openSession(sessionCard.dataset.sessionId);
+  }
+});
+
+// 2) 키보드 접근성(세션 카드만 처리)
+// - 버튼([data-open-poster])은 기본 키보드 동작이 있으므로 따로 건드리지 않음
+programPanelsContainer.addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+
+  const sessionCard = e.target.closest('[data-session-id]');
+  if (sessionCard) {
+    e.preventDefault();        // 스크롤/페이지 이동 방지
+    openSession(sessionCard.dataset.sessionId);
+  }
+});
+
+      // Hash deep-link support
+      const initialHash = window.location.hash;
+      if (initialHash) {
+        try {
+          const initialTabButton = document.querySelector(`button[aria-controls="${initialHash.substring(1)}"]`);
+          if (initialTabButton) initialTabButton.click();
+        } catch (e) {
+          console.error('Error handling initial hash:', e);
+        }
+      }
+    });
+  </script>
+
+  <!-- ===== 헤더 스크롤 상태 ===== -->
+  <script>
+    const headerEl = document.querySelector('.header');
+    if (headerEl){
+      const onScroll = () => headerEl.classList.toggle('is-scrolled', window.scrollY > 8);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  </script>
+</body>
+</html>
